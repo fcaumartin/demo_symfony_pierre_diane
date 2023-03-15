@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+{{ dump(client) }}
+
+{% endblock %}
+
+
+
+
+
+{% block javascripts %}
+{{parent}}
+
+<script>
+    console.log("...")
+</script>
+
+{% endblock %}
