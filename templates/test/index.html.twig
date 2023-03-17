@@ -6,17 +6,24 @@
 <div class="container">
 <div class="row">
     <div class="col-6">
-        {{ form_start(form) }}
+        {% for artist in artists %}
+        <div>
+            <hr>
 
-            {{ form_errors(form) }}
-
-            {{ form_row(form.nom)}}
-
-
-
-        {{ form_end(form) }}
-        {# {{ form_end(form, {render_rest: false}) }} #}
-    
+            {{ artist.nom }}
+            ({{ artist.discs | length }})
+            <hr>
+            {% for disc in artist.discs %}
+                <div>
+                    <a href="/disc/{{disc.id}}">
+                        {{ disc.titre}}
+                        {{ disc.annee}}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+            
+        {% endfor %}
     </div>
 </div>
 </div>

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+    <div class="col-6">
+        <h1>{{disc.titre}}</h1>
+
+        <h2>
+            {{disc.artist.nom}}
+            <hr>
+            <h3>Autres disques</h3>
+            {% for d in disc.artist.discs %}
+                <div>{{ d.titre }}<div>
+            {% endfor %}
+            <hr>
+        </h2>
+    </div>
+</div>
+</div>
+{% endblock %}
